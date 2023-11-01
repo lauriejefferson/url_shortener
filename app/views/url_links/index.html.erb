@@ -1,0 +1,20 @@
+<h1>URL Shortener</h1>
+<%= form_with model: @url_link do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <%= form.label :url %>
+    <%= form.url_field :url, required: true%>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<% console %>
+<%= render @url_links %>
