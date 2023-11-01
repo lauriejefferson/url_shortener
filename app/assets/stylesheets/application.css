@@ -31,3 +31,8 @@ input[type=submit] {
     color: var(--sand-1);
     padding: var(--size-2);
 }
+
+svg {
+    width: 24px;
+    height: 24px;
+}

@@ -1,5 +1,5 @@
 <h1>URL Shortener</h1>
-<%= form_with model: @url_link do |form| %>
+<%= form_with model: @url_link, data: {turbo: false} do |form| %>
   <div>
     <%= form.label :title %>
     <%= form.text_field :title %>
@@ -10,7 +10,7 @@
   </div>
   <div>
     <%= form.label :url %>
-    <%= form.url_field :url, required: true%>
+    <%= form.url_field :url, required: true, autofocus: true, placeholder: "https://example.com" %>
   </div>
   <div>
     <%= form.submit %>
