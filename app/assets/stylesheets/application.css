@@ -17,7 +17,17 @@
 
 body {
     font-family: var(--font-sans);
-    font-size: var(--font-size-3)
+    font-size: var(--font-size-3);
+    max-width: 1440px;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    margin: 0 auto;
+    width: 800px;
 }
 
 h1 {
@@ -28,11 +38,90 @@ input[type=submit] {
     border: none;
     border-radius: var(--radius-2);
     background-color: var(--violet-6);
-    color: var(--sand-1);
+    color: white;
+    text-transform: uppercase;
+    margin-top: var(--size-2);
     padding: var(--size-2);
 }
 
 svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+}
+
+.edit-links {
+    display: flex;
+    gap: 1em;
+    margin-top: var(--size-3)
+}
+
+
+.edit-links a {
+    text-decoration: none;
+}
+
+.edit-links form button {
+    border: none;
+    border-radius: var(--radius-2);
+    background-color: var(--violet-6);
+    color: white;
+    text-transform: uppercase;
+    padding: var(--size-2);
+}
+
+
+.alert {
+    background-color: var(--yellow-3);
+    color: var(--yellow-10);
+    padding: var(--size-2);
+    border: none;
+    border-radius: var(--radius-2);
+    width: 100%;
+}
+
+.notice {
+    background-color: var(--green-3);
+    color: var(--green-10);
+    padding: var(--size-2);
+    border: none;
+    border-radius: var(--radius-2);
+    width: 100%;
+}
+
+.links {
+    margin-top: var(--size-3);
+}
+
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4em;
+    padding: var(--size-2);
+    align-items: center;
+}
+
+.link-url {
+    grid-column: span 5;
+}
+
+.link-views {
+    grid-column: span 2;
+    font-size: var(--font-size-1);
+    text-align: center;
+    background-color: var(--gray-1);
+    padding: var(--size-2);
+    border-radius: var(--radius-2);
+}
+
+.link-copy {
+    font-size: var(--font-size-1);
+    text-align: center;
+    background-color: var(--gray-1);
+    padding: var(--size-2);
+    border-radius: var(--radius-2);
+}
+
+.link-graph {
+    display: flex;
+    justify-content: space-between;
 }

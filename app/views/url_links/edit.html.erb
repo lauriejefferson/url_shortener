@@ -1,0 +1,7 @@
+<h1>Edit Link</h1>
+<%= render partial: 'form', locals: {url_link: @url_link} %>
+<div class="edit-links" >
+  <%= link_to 'Cancel', @url_link %>
+  or
+  <%= button_to "Delete", @url_link, method: :delete, data: {turbo_confirm: "Are you sure"} %>
+</div>

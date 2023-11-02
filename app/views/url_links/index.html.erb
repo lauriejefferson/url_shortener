@@ -1,20 +1,5 @@
 <h1>URL Shortener</h1>
-<%= form_with model: @url_link, data: {turbo: false} do |form| %>
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div>
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-  <div>
-    <%= form.label :url %>
-    <%= form.url_field :url, required: true, autofocus: true, placeholder: "https://example.com" %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-<% console %>
-<%= render @url_links %>
+<%= render partial: 'form', locals: {url_link: @url_link } %>
+<div class="links">
+  <%= render @url_links %>
+</div>
