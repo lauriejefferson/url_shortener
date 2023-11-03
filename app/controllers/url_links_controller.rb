@@ -3,11 +3,10 @@ class UrlLinksController < ApplicationController
 
   def index
     @url_links = UrlLink.recent_first
-    @link ||= UrlLink.new
+    @url_link ||= UrlLink.new
   end
 
   def create
-    puts params
     @url_link = UrlLink.new(url_link_params)
     if @url_link.save
       redirect_to root_path
