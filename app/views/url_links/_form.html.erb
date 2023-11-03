@@ -1,0 +1,6 @@
+<%= form_with model: url_link, data:{turbo: false} do |form| %>
+  <div>
+    <%= form.url_field :url, required: true, autofocus: true, placeholder: "https://example.com" %>
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
