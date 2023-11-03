@@ -69,6 +69,30 @@ svg {
     padding: var(--size-2);
 }
 
+form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+
+input[type="url"] {
+    margin-right: 0.5em;
+    padding: 0.8em 1em;
+    width: 680px;
+}
+
+
+button {
+    margin-bottom: 0.5em;
+    padding: 1.1em 1.5em;
+    border: none;
+    border-radius: var(--radius-2);
+    background-color: var(--green-5);
+    color: white;
+    text-transform: uppercase;
+}
 
 .alert {
     background-color: var(--yellow-3);

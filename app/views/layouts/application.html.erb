@@ -10,8 +10,8 @@
   </head>
   <body>
     <main>
-      <%= tag.p alert class:"alert" if alert %>
-      <%= tag.p notice class:"notice" if notice %>
+      <%= tag.p alert, class:"alert" if alert %>
+      <%= tag.p notice, class:"notice" if notice %>
       <%= yield %>
     </main>
   </body>

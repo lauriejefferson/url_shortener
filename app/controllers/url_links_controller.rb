@@ -7,6 +7,7 @@ class UrlLinksController < ApplicationController
   end
 
   def create
+    puts params
     @url_link = UrlLink.new(url_link_params)
     if @url_link.save
       redirect_to root_path
@@ -37,7 +38,7 @@ class UrlLinksController < ApplicationController
   private
 
   def url_link_params
-    params.require(:url_link).permit(:title, :description, :url)
+    params.require(:url_link).permit(:url)
   end
 
 
