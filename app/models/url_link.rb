@@ -8,8 +8,8 @@ class UrlLink < ApplicationRecord
     MetadataJob.perform_later(to_param)
   end
 
-  def self.find_by_short_code(code)
-    find ShortCode.decode(code)
+  def self.find(id)
+    super ShortCode.decode(id)
   end
 
   def to_param
@@ -17,7 +17,6 @@ class UrlLink < ApplicationRecord
   end
 
   def domain
-    URI(url).host
-  rescue URI::InvalidURIError
+    URI(url).host rescue URI::InvalidURIError
   end
 end

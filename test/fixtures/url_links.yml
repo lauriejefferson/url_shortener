@@ -2,14 +2,12 @@
 
 one:
   url: MyString
-  short_code: MyString
   view_count: MyString
   title: MyString
   description: MyString
 
 two:
   url: MyString
-  short_code: MyString
   view_count: MyString
   title: MyString
   description: MyString
