@@ -143,9 +143,15 @@ input[type="submit"] {
 .link-copy {
     font-size: var(--font-size-1);
     text-align: center;
+}
+
+.link-copy-btn {
     background-color: var(--gray-1);
     padding: var(--size-2);
+    margin-right: 2em;
+    border: none;
     border-radius: var(--radius-2);
+    cursor: pointer;
 }
 
 .link-graph {

@@ -10,6 +10,9 @@
     </svg>
   <% end %>
   <%= tag.div pluralize(@url_link.view_count, "view")%>
-  <%= link_to 'Edit', edit_url_link_path(@url_link), class: "link-copy" %>
+  <div class="link-copy" >
+    <%= button_tag "Copy", class: "link-copy-btn", data: {controller: "clipboard", clipboard_text: view_url(@url_link) } %>
+    <%= link_to 'Edit',  edit_url_link_path(@url_link), class: "link-copy-btn" %>
+  </div>
 </div>
 <%= line_chart @url_link.views.group_by_day(:created_at, range: 2.weeks.ago..Time.now, expand_range: true ).count %>

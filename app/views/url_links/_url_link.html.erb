@@ -15,7 +15,7 @@
       <%= link_to pluralize(url_link.view_count, "views"), url_link %>
     </div>
     <div class="link-copy" >
-      <%= link_to "Copy", url_link %>
+      <%= button_tag "Copy", class: "link-copy-btn", data: {controller: "clipboard", clipboard_text: view_url(url_link) } %>
     </div>
   </div>
 <% end %>
