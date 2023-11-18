@@ -9,7 +9,14 @@ class UrlLinksController < ApplicationController
   def create
     @url_link = UrlLink.new(url_link_params)
     if @url_link.save
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.turbo_stream {render turbo_stream: [
+          turbo_stream.prepend("links", @url_link),
+          turbo_stream.replace("link_form", partial: "url_links/form", locals: {url_link: UrlLink.new})
+        ]}
+      end
+
     else
       index
       render :index, status: :unprocessable_entity

@@ -1,4 +1,5 @@
 <%= tag.div id: dom_id(url_link) do %>
+  <%= turbo_stream_from url_link %>
   <div class="link-grid" >
     <div class="link-url">
       <%= link_to view_path(url_link), target: :_blank, data: {turbo: false} do %>
