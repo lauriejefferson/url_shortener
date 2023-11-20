@@ -168,3 +168,10 @@ input[type="submit"] {
     font-size: var(--font-size-1);
     color: var(--gray-7)
 }
+
+.login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

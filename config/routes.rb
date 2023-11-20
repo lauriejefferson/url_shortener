@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :url_links
   resources :views, path: :v, only: [:show]
   root "url_links#index"

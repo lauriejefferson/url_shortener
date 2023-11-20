@@ -12,8 +12,14 @@
   </head>
   <body>
     <main>
-      <%= tag.p alert, class:"alert" if alert %>
       <%= tag.p notice, class:"notice" if notice %>
+      <%= tag.p alert, class:"alert" if alert %>
+      <div class="login">
+        <% if user_signed_in? %>
+          <%= link_to "Url Links", url_links_path %>
+          <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
+        <% end %>
+      </div>
       <%= yield %>
     </main>
   </body>
