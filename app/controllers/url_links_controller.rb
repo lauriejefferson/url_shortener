@@ -1,6 +1,6 @@
 class UrlLinksController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_editable, only: [:edit, :update, :destroy]
 
   def index
     @url_links = UrlLink.recent_first
@@ -8,7 +8,7 @@ class UrlLinksController < ApplicationController
   end
 
   def create
-    @url_link = UrlLink.new(url_link_params)
+    @url_link = UrlLink.new(url_link_params.with_defaults(user: current_user))
     if @url_link.save
       respond_to do |format|
         format.html { redirect_to root_path }
@@ -48,5 +48,10 @@ class UrlLinksController < ApplicationController
     params.require(:url_link).permit(:url)
   end
 
+  def check_if_editable
+    unless @url_link.editable_by?(current_user)
+      redirect_to @url_link, alert: "You aren't allowed to do that."
+    end
+  end
 
 end

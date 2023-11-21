@@ -169,9 +169,34 @@ input[type="submit"] {
     color: var(--gray-7)
 }
 
-.login {
+.form {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: start;
+}
+
+.btn {
+    background-color: var(--indigo-9);
+    color: white;
+    padding: var(--size-2);
+    margin-right: 2em;
+    border: none;
+    border-radius: var(--radius-2);
+    cursor: pointer;
+}
+
+.nav,
+.flex {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.login,
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
 }

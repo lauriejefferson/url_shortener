@@ -1,4 +1,13 @@
-<%= link_to '← Back to all links', root_path, class: "" %>
+<div class="flex">
+  <%= link_to '← Back to all links', root_path %>
+  <div class="links">
+    <%= tag.div pluralize(@url_link.view_count, "view")%>
+    <div class="link-copy" >
+      <%= button_tag "Copy", class: "link-copy-btn", data: {controller: "clipboard", clipboard_text: view_url(@url_link) } %>
+      <%= link_to 'Edit',  edit_url_link_path(@url_link), class: "link-copy-btn" if @url_link.editable_by?(current_user) %>
+    </div>
+  </div>
+</div>
 <h1><%= @url_link.url %></h1>
 <%= tag.div @url_link.description %>
 <div class="link-graph">
@@ -9,10 +18,5 @@
       <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
     </svg>
   <% end %>
-  <%= tag.div pluralize(@url_link.view_count, "view")%>
-  <div class="link-copy" >
-    <%= button_tag "Copy", class: "link-copy-btn", data: {controller: "clipboard", clipboard_text: view_url(@url_link) } %>
-    <%= link_to 'Edit',  edit_url_link_path(@url_link), class: "link-copy-btn" %>
-  </div>
 </div>
 <%= line_chart @url_link.views.group_by_day(:created_at, range: 2.weeks.ago..Time.now, expand_range: true ).count %>
