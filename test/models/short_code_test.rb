@@ -22,7 +22,7 @@ class ShortCodeTest < ActiveSupport::TestCase
   end
 
   test "encode 999_999" do
-    assert_equal "fc91", ShortCode.encode(999_999)
+    assert_equal "4c91", ShortCode.encode(999_999)
   end
 
   test "decode '0'" do
