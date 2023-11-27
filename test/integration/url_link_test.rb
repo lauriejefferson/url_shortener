@@ -1,6 +1,6 @@
 require "test_helper"
 
-class UrlLinkTest < ActionDispatch::IntegrationTest
+class UrlLinkIntegrationTest < ActionDispatch::IntegrationTest
   test "links index" do
     get url_links_path
     assert_response :ok

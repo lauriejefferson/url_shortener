@@ -1,6 +1,6 @@
 require "test_helper"
 
-class UrlLinkTest < ActionDispatch::IntegrationTest
+class ViewsIntegrationTest < ActionDispatch::IntegrationTest
   test "visiting a link records a view" do
     link = url_links(:one)
     assert_difference "View.count" do
