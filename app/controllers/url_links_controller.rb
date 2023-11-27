@@ -3,8 +3,12 @@ class UrlLinksController < ApplicationController
   before_action :check_if_editable, only: [:edit, :update, :destroy]
 
   def index
-    @url_links = UrlLink.recent_first
+    @pagy, @url_links = pagy UrlLink.recent_first
     @url_link ||= UrlLink.new
+    rescue Pagy::OverflowError
+      redirect_to root_path
+      #params[:page] = 1
+      #retry
   end
 
   def create

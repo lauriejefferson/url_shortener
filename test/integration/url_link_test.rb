@@ -7,8 +7,14 @@ class UrlLinkIntegrationTest < ActionDispatch::IntegrationTest
   end
 
   test "links index pagination" do
-    get url_links_path(page: 2)
+    get url_links_path
     assert_response :ok
+  end
+
+  test "links index handles pagination overflow" do
+    UrlLink.destroy_all
+    get url_links_path(page: 2)
+    assert_redirected_to root_path
   end
 
   test "link show" do

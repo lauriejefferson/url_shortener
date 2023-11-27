@@ -200,3 +200,8 @@ input[type="submit"] {
     align-items: center;
     gap: 1em;
 }
+
+.pagination {
+    margin: 2em 0;
+    text-align: center;
+}
